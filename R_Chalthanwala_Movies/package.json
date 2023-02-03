@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "generatecomponent": "command-to-generate-component",
-    "generatepipe":"command-to-generate-pipe",
+    "generatepipe": "command-to-generate-pipe",
     "generatedirective": "command-to-generate-directive",
     "ng": "ng",
     "start": "ng serve",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "angular-module": "^1.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
