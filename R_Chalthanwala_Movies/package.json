@@ -1,7 +1,10 @@
 {
   "name": "r-chalthanwala-movies",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
+    "generatecomponent": "command-to-generate-component",
+    "generatepipe":"command-to-generate-pipe",
+    "generatedirective": "command-to-generate-directive",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
