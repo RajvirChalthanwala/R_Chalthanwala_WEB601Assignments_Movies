@@ -1,5 +1,4 @@
 <p>content-card works!</p>
-
-
-{{displayMyIndex(1)}}
-{{displayMyIndex(10)}}
+<div *ngFor="let content of contentList.contentsList">
+  <div [innerHTML]="contentList.getContentDetails(contentList.contentsList.indexOf(content))"></div>
+</div>

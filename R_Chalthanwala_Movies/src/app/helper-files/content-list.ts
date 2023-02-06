@@ -1,4 +1,4 @@
-import { Content } from "../helper-files/content-interface";
+import { Content } from "./content-interface";
 
 export class ContentList {
   private _items: Content[];
@@ -7,26 +7,29 @@ export class ContentList {
     this._items = [];
   }
 
-  getItems(): Content[] {
+  get contentsList() {
     return this._items;
   }
 
-  addFunction(contentItem: Content) {
-    return this._items.push(contentItem);
+  add(content: Content) {
+    return this._items.push(content);
   }
 
-  getLength() {
+  count() {
     return this._items.length;
   }
 
-  printIndex(index: number): string {
-    let readerFriendlyHtml = `<div>`;
-    readerFriendlyHtml += `<p>` + this._items[index].title + `<p>`;
-    readerFriendlyHtml += `<p>` + this._items[index].description + `<p>`;
-    readerFriendlyHtml += `<p>` + this._items[index].type + `<p>`;
-    readerFriendlyHtml += `<p>` + this._items[index].creator + `<p>`;
-    readerFriendlyHtml += `<img src ="` + this._items[index].imgURL + `">`;
-    readerFriendlyHtml += `</div>`;
-    return readerFriendlyHtml;
+  getContentDetails(index: number) {
+    let content = this._items[index];
+    return `
+        <div>
+        <h1>Title: ${content.title}</h1>
+        <p>description: ${content.description}</p>
+        <img src="${content.imgURL}">
+        <p>creator: ${content.creator}</p>
+        <p>Type: ${content.type}</p>
+        <p>Tags: ${content.tags}</p>
+        </div><br>`;
   }
 }
+
