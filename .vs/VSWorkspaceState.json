@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
+    "",
+    "\\R_Chalthanwala_Movies",
     "\\R_Chalthanwala_Movies\\src",
     "\\R_Chalthanwala_Movies\\src\\app",
     "\\R_Chalthanwala_Movies\\src\\app\\content-card",
     "\\R_Chalthanwala_Movies\\src\\app\\helper-files"
   ],
+  "SelectedNode": "\\R_Chalthanwala_Movies\\src\\app\\content-card\\content-card.component.html",
   "PreviewInSolutionExplorer": false
 }
