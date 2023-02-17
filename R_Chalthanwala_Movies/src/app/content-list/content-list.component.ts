@@ -41,7 +41,7 @@ export class ContentListComponent {
         title: 'Pathaan',
         description: 'Pathaan is a 2023 Indian Hindi-language action thriller film directed by Siddharth Anand',
         creator: 'Yash Raj Flims',
-        imgURL: 'https://en.wikipedia.org/wiki/File:Pathaan_film_poster.jpg',
+        imgURL: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcReYm0cslhCuOEdZw105khAzKgu0_b9-iAvVCSWe4Qg_mbIZ0EL',
         type: 'Action',
         tags: ['Tag 1.1', 'Tag 1.2'],
       },

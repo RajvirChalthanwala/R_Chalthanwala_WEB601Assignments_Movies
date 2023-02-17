@@ -1,32 +1,32 @@
-class ContentList{
-  private contentArray: Content[]=[];
+import { Content } from "./content-interface";
+
+export class ContentList {
+  private _items: Content[];
 
   constructor() {
+    this._items = [];
   }
 
-  getContentArray(): Content[]{
-    return this.contentArray;
+  getItems(): Content[] {
+    return this._items;
   }
 
-  addContent(content: Content){
-    this.contentArray.push(content);
+  addFunction(contentItem: Content) {
+    return this._items.push(contentItem);
   }
 
-  getLength(): number{
-    return this.contentArray.length;
+  getLength() {
+    return this._items.length;
   }
-  getContentHTML(index: number): string {
-    if (index < 0 || index >= this.contentArray.length){
-      return '<p>Error: Index out of bounds</p>';
-    }
 
-    const content = this.contentArray[index];
-    return `
-    <h2>${content.title}</h2>
-    <p>${content.description}</p>
-    <p>By ${content.creator}</p>
-    <img src="${content.imgURL}" alt="${content.title}">
-    <p>Type: ${content.type}</p>
-    `;
+  printIndex(index: number): string {
+    let readerFriendlyHtml = `<div>`;
+    readerFriendlyHtml += `<p>` + this._items[index].title + `<p>`;
+    readerFriendlyHtml += `<p>` + this._items[index].description + `<p>`;
+    readerFriendlyHtml += `<p>` + this._items[index].type + `<p>`;
+    readerFriendlyHtml += `<p>` + this._items[index].creator + `<p>`;
+    readerFriendlyHtml += `<img src ="` + this._items[index].imgURL + `">`;
+    readerFriendlyHtml += `</div>`;
+    return readerFriendlyHtml;
   }
 }
