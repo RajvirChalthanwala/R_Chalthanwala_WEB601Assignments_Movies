@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Content } from './helper-files/content-interface';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'R_Chalthanwala_Movies';
+  contentArray: Content[] = [];
 }
+/*
+export class ContentListComponent {
+  contentArray: any[] = [];
+}
+*/

@@ -34,7 +34,7 @@ export class ContentListComponent {
         creator: 'J. K. Rowling',
         imgURL: 'https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg',
         type: 'Fantacy',
-        tags: ['Tag 1.1', 'Tag 1.2'],
+        tags: ['Tag 9.1', 'Tag 1.2'],
       },
       {
         id: 2,
@@ -43,7 +43,7 @@ export class ContentListComponent {
         creator: 'Yash Raj Flims',
         imgURL: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcReYm0cslhCuOEdZw105khAzKgu0_b9-iAvVCSWe4Qg_mbIZ0EL',
         type: 'Action',
-        tags: ['Tag 1.1', 'Tag 1.2'],
+        tags: ['Tag 8.1', 'Tag 1.2'],
       },
       {
         id: 3,
@@ -52,7 +52,7 @@ export class ContentListComponent {
         creator: 'Jhon William',
         imgURL: 'https://resizing.flixster.com/ctMqrfzTFaDm2sbYPS4KSJgjp2Y=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWUyZGViZDgtNmNhOS00MTJiLTk5YTAtOGUwNDQ5NWRkOTVhLmpwZw==',
         type: 'Fantacy',
-        tags: ['Tag 1.1', 'Tag 1.2'],
+        tags: ['Tag 7.1', 'Tag 1.2'],
       },
       {
         id: 4,
@@ -60,8 +60,8 @@ export class ContentListComponent {
         description: 'Will Sawyer is a former FBI agent and U.S. war veteran who now assesses security for skyscrapers.',
         creator: 'Rawson Thurber',
         imgURL: 'http://www.movienewsletters.net/photos/004978R1.jpg',
-        type: 'Action',
-        tags: ['Tag 1.1', 'Tag 1.2'],
+        type: '',
+        tags: ['Tag 6.1', 'Tag 1.2'],
       },
       {
         id: 5,
@@ -70,7 +70,7 @@ export class ContentListComponent {
         creator: 'Mahesh Manjrekar',
         imgURL: 'https://upload.wikimedia.org/wikipedia/en/b/bd/Antim-_The_Final_Truth.jpg',
         type: 'Action',
-        tags: ['Tag 1.1', 'Tag 1.2'],
+        tags: ['Tag 5.1', 'Tag 1.2'],
       },
       {
         id: 6,
@@ -78,9 +78,110 @@ export class ContentListComponent {
         description: 'In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits.',
         creator: 'Duffer Brothers',
         imgURL: 'https://occ-0-38-769.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABS6v2gvwesuRN6c28ZykPq_fpmnQCJwELBU-kAmEcuC9HhWX-DfuDbtA-bfo-IrfgNtxl0qwJJlhI6DENsGFXknKkjhxPGTV-qhp.jpg?r=608',
-        type: 'Fantacy',
-        tags: ['Tag 1.1', 'Tag 1.2'],
+        type: '',
+        tags: ['Tag 4.1', 'Tag 1.2'],
+      },
+      {
+        id: 7,
+        title: 'The Gray Man',
+        description: 'When the CIAs top asset -- his identity known to no one best',
+        creator: 'Joe Russo',
+        imgURL: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQYpfFPwwcvE1q2_TPViUEfzAnalhWMCh4qPHUFD5tDXnN2NP2e',
+        type: 'Action',
+        tags: ['Tag 3.1', 'Tag 1.2'],
+      },
+      {
+        id: 8,
+        title: 'Etenarls',
+        description: 'The Eternals, a race of immortal beings with superhuman powers who have secretly lived on Earth for thousands of years',
+        creator: 'Chloe Zhao',
+        imgURL: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTFInBWWtvbKulV6xz1RHgrFjSrbPUX0PvwGWwYYr54OiuCh_I5',
+        type: 'Action',
+        tags: ['Tag 2.1', 'Tag 1.2'],
       }
     ];
   }
+
+
+
+
+  searchTerm = '';
+  searchResults: Content[] = [];
+  searchExists = false;
+
+  checkExistence() {
+    /*
+    if (this.searchTerm.trim() === '')
+    {
+      this.searchExists = false;
+      return;
+    }
+    */
+    this.searchResults = this.contentArray.filter(item => item.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
+    this.searchExists = this.searchResults.length > 0;
+  }
+
+
+
+  /*
+  contentArray: Content[] = [
+    {
+      id: 1,
+      title: 'mySampleTitle1',
+      description: 'This is a description1',
+      creator: 'Creator1',
+      imgURL: 'https://justin-biber-babysong.com',
+      type: 'rock music',
+      tags: ['Tag 1.1', 'Tag 1.2'],
+    },
+    {
+      id: 2,
+      title: 'mySampleTitle2',
+      description: 'This is a description2',
+      creator: 'Creator2',
+      imgURL: 'https://justin-biber-babysong.com',
+      type: 'rock music',
+      tags: ['Tag 1.1', 'Tag 1.2'],
+    },
+    {
+      id: 3,
+      title: 'mySampleTitle3',
+      description: 'This is a description3',
+      creator: 'Creator3',
+      imgURL: 'https://justin-biber-babysong.com',
+      type: 'rock music',
+      tags: ['Tag 1.1', 'Tag 1.2'],
+    },
+    {
+      id: 4,
+      title: 'mySampleTitle4',
+      description: 'This is a description4',
+      creator: 'Creator4',
+      imgURL: 'https://justin-biber-babysong.com',
+      type: 'rock music',
+      tags: ['Tag 1.1', 'Tag 1.2'],
+    },
+    {
+      id: 5,
+      title: 'mySampleTitle5',
+      description: 'This is a description5',
+      creator: 'Creator5',
+      imgURL: 'https://justin-biber-babysong.com',
+      type: 'rock music',
+      tags: ['Tag 1.1', 'Tag 1.2'],
+    },
+    {
+      id: 6,
+      title: 'mySampleTitle6',
+      description: 'This is a description6',
+      creator: 'Creator6',
+      imgURL: 'https://justin-biber-babysong.com',
+      type: 'rock music',
+      tags: ['Tag 1.1', 'Tag 1.2'],
+    },
+  ];
+  constructor() { }
+  ngOnInit(): void {
+  }
+  */
 }
