@@ -1,6 +1,6 @@
 {
   "name": "r-chalthanwala-movies",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "scripts": {
     "generatecomponent": "command-to-generate-component",
     "generatepipe":"command-to-generate-pipe",
