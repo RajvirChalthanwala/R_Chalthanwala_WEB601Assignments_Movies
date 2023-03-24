@@ -4,6 +4,10 @@
 
 
 
+<app-create-content (onCreation)="addContent($event)"></app-create-content>
+
+
+
 <!-- --------------------------------------------------------------------------------------------------------- -->
 <!-- --------------------------------------------------------------------------------------------------------- -->
 <!-- --------------------------------------------------------------------------------------------------------- -->
@@ -88,16 +92,15 @@
 
 
 <h1 appHoverAffect="underline" style="padding: 20px; padding-left: 550px; margin: 20px; font-size: 60px;
-  background-color: black; color: blanchedalmond; ">
+  background-color: dimgrey; color:white; ">
   Type : Action
 </h1>
 
 <ul style="padding-left:300px">
   <li style="list-style-type: none; font-family:'Times New Roman', Times, serif"
-      *ngFor="let content of contentArray | contentList: 'ios'">
+      *ngFor="let content of contentArray | contentList: 'Action'">
 
-    <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; border-radius: 10%;
-      text-align: center; background-color: black; color: blueviolet; margin-bottom: 50px; ">
+    <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; border-radius: 10%; text-align: center; background-color: dimgrey; color: white; margin-bottom: 50px; ">
 
       <h1 class="content-card-header" style="font-size:50px">
         {{content.title}}
@@ -136,16 +139,16 @@
 
 
 <h1 appHoverAffect="underline" style="padding: 20px; padding-left: 550px; margin: 20px; font-size: 60px;
-  background-color: silver; color: wheat; ">
+  background-color: burlywood; color: black; ">
   Type: Fantacy
 </h1>
 
 <ul style="padding-left:300px">
   <li style="list-style-type: none; font-family:'Times New Roman', Times, serif"
-      *ngFor="let content of contentArray | contentList: 'android'">
+      *ngFor="let content of contentArray | contentList: 'Fantacy'">
 
     <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; border-radius: 10%;
-      text-align: center; background-color: bisque; color: beige; margin-bottom: 50px; ">
+      text-align: center; background-color: burlywood; color: black; margin-bottom: 50px; ">
 
       <h1 class="content-card-header" style="font-size:50px">
         {{content.title}}
