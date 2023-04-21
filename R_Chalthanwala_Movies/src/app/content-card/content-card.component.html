@@ -1,18 +1,17 @@
 <mat-card [id]="movie.id" [ngClass]="['card', class]" appHoverAffect="border">
   <mat-card-header [matTooltip]="movie.title" [matTooltipPosition]="'above'">
-
     <div class="card-img">
       <div *ngIf="movie.imgURL; else defaultImage">
-        <img [src]="movie.imgURL" alt={{movie.title}} (click)="handleClick(movie)">
+        <img mat-card-image [src]="movie.imgURL" alt={{movie.title}} (click)="handleClick(movie)">
       </div>
       <ng-template #defaultImage>
-        <img [src]="defaultMovie" alt={{movie.title}} (click)="handleClick(movie)">
+        <img mat-card-image [src]="defaultImage" alt={{movie.title}} (click)="handleClick(movie)">
       </ng-template>
     </div>
   </mat-card-header>
+
   <mat-card-content class="card-body">
-    <h2>{{movie.title}}</h2>
-    <p>{{movie.description}}</p>
+    <h2><a routerLink="/contents/{{movie.id}}">{{movie.title}}</a></h2>
     <p><strong>Creator:</strong> {{movie.creator}}</p>
   </mat-card-content>
 

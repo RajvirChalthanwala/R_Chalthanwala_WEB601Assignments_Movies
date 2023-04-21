@@ -11,7 +11,7 @@ export class ContentListComponent {
   contents: Content[] = [];
   searchTitle: string = "";
   titleFound: boolean | null = null;
-  defaultMovie: string = '/assets/images/drawMovie.jpg';
+  defaultMovie: string = '/assets/images/defaultImage.png';
 
 
   constructor(private MovieService: MovieService) {

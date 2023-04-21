@@ -10,20 +10,12 @@ import { MovieService } from './services/movie.service';
 })
 export class AppComponent {
   title = 'R_Chalthanwala_Movies';
-  movieId: number = 3;
-  oneMovieById: any = {};
+ 
 
   constructor(private MovieService: MovieService) { }
 
   ngOnInit() {
-    this.findMovieById();
+    
   }
+ }
 
-  findMovieById() {
-    this.MovieService.getMovieById(this.movieId).subscribe((result: any) => {
-      if (typeof result === "object") {
-        this.oneMovieById = result;
-      }
-    });
-  }
-}

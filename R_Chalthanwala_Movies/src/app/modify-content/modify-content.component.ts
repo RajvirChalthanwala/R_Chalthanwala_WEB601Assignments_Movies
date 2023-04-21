@@ -17,7 +17,7 @@ export class ModifyContentComponent {
 
   openDialog() {
     const dialogRef = this.dialog.open(AddContentDialogComponent, {
-      width: '60%'
+      width: '80%'
     });
     dialogRef.afterClosed().subscribe(newMovieFromDialog => {
       if (newMovieFromDialog) {
