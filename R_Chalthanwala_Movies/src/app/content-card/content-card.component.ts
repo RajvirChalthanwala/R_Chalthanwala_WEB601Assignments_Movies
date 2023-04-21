@@ -9,7 +9,7 @@ import { Content } from '../helper-files/content-interface';
 export class ContentCardComponent {
   @Input() movie: any;
   @Input() class: string = '';
-  defaultMovie: string = '/assets/images/drawMovie.jpg';
+  defaultMovie: string = '/assets/images/defaultImage.png';
 
   handleClick(content: Content) {
     console.log(`ID: ${content.id}, Title: ${content.title}`);

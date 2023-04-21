@@ -11,7 +11,7 @@ export class ContentListComponent {
   contents: Content[] = [];
   searchTitle: string = "";
   titleFound: boolean | null = null;
-  defaultMovie: string = '/assets/images/drawBike.jpg';
+  defaultMovie: string = '/assets/images/drawMovie.jpg';
 
 
   constructor(private MovieService: MovieService) {
@@ -22,6 +22,12 @@ export class ContentListComponent {
     this.MovieService.getMovies().subscribe(movies => this.contents = movies);
   }
 
+  addNewMovie(newMovie: Content) {
+    this.MovieService.addMovie(newMovie).subscribe(newMovieFromServer => {
+      this.contents.push(newMovieFromServer);
+      this.contents = [...this.contents];
+    });
+  }
 
   searchByTitle() {
     const matchingMovie = this.contents.find(movie => movie.title.toLowerCase() === this.searchTitle.toLowerCase());
@@ -174,69 +180,4 @@ export class ContentListComponent {
     this.searchResults = this.contentArray.filter(item => item.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
     this.searchExists = this.searchResults.length > 0;
   }
-
-
-
-  
-  contentArray: Content[] = [
-    {
-      id: 1,
-      title: 'mySampleTitle1',
-      description: 'This is a description1',
-      creator: 'Creator1',
-      imgURL: 'https://justin-biber-babysong.com',
-      type: 'rock music',
-      tags: ['Tag 1.1', 'Tag 1.2'],
-    },
-    {
-      id: 2,
-      title: 'mySampleTitle2',
-      description: 'This is a description2',
-      creator: 'Creator2',
-      imgURL: 'https://justin-biber-babysong.com',
-      type: 'rock music',
-      tags: ['Tag 1.1', 'Tag 1.2'],
-    },
-    {
-      id: 3,
-      title: 'mySampleTitle3',
-      description: 'This is a description3',
-      creator: 'Creator3',
-      imgURL: 'https://justin-biber-babysong.com',
-      type: 'rock music',
-      tags: ['Tag 1.1', 'Tag 1.2'],
-    },
-    {
-      id: 4,
-      title: 'mySampleTitle4',
-      description: 'This is a description4',
-      creator: 'Creator4',
-      imgURL: 'https://justin-biber-babysong.com',
-      type: 'rock music',
-      tags: ['Tag 1.1', 'Tag 1.2'],
-    },
-    {
-      id: 5,
-      title: 'mySampleTitle5',
-      description: 'This is a description5',
-      creator: 'Creator5',
-      imgURL: 'https://justin-biber-babysong.com',
-      type: 'rock music',
-      tags: ['Tag 1.1', 'Tag 1.2'],
-    },
-    {
-      id: 6,
-      title: 'mySampleTitle6',
-      description: 'This is a description6',
-      creator: 'Creator6',
-      imgURL: 'https://justin-biber-babysong.com',
-      type: 'rock music',
-      tags: ['Tag 1.1', 'Tag 1.2'],
-    },
-  ];
-  constructor() { }
-  ngOnInit(): void {
-  }
-  
-}
 */

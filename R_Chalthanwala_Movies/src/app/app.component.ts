@@ -10,20 +10,16 @@ import { MovieService } from './services/movie.service';
 })
 export class AppComponent {
   title = 'R_Chalthanwala_Movies';
-  movieId: number = 8;
+  movieId: number = 3;
   oneMovieById: any = {};
-    MovieService: any;
 
-  constructor(private Service: MovieService) { }
+  constructor(private MovieService: MovieService) { }
 
   ngOnInit() {
     this.findMovieById();
   }
-    findMovieById() {
-        throw new Error('Method not implemented.');
-    }
 
-  findBikeById() {
+  findMovieById() {
     this.MovieService.getMovieById(this.movieId).subscribe((result: any) => {
       if (typeof result === "object") {
         this.oneMovieById = result;
