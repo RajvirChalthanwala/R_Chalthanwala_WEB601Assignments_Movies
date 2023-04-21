@@ -1,13 +1,45 @@
-<p>content-list works!</p>
+<main>
+  <section class="searchForTitle">
+    <div>
+      <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
+      <button (click)="searchByTitle()">Search</button>
+    </div>
+
+    <div *ngIf="titleFound !== null">
+      <p [style.color]="titleFound ? 'green' : 'crimson'">
+        {{titleFound ? 'Movie Found' : 'Movie not found'}}
+      </p>
+    </div>
+  </section>
+
+
+  <h1>Movies with no type</h1>
+  <section class="cards">
+    <div *ngFor="let content of contents | contentType" appHoverAffect="border">
+      <app-content-card [movie]="content" [class]="'noContentType'"></app-content-card>
+    </div>
+  </section>
+
+  <h1>Actions Movies</h1>
+  <section class="cards">
+    <div *ngFor="let content of contents | contentType:'Action Movies'" appHoverAffect="border">
+      <app-content-card [movie]="content" [class]="'actionMovie'"></app-content-card>
+    </div>
+  </section>
+
+  <h1>Fantacy Movies</h1>
+  <section class="cards">
+    <div *ngFor="let content of contents | contentType:'Fantacy Movies'" appHoverAffect="border">
+      <app-content-card [movie]="content" [class]="'fantacyMovie'"></app-content-card>
+    </div>
+  </section>
+</main>
+
+
+<!--<p>content-list works!</p>
 
 <p>Movies List</p>
-
-
-
-<!-- --------------------------------------------------------------------------------------------------------- -->
-<!-- --------------------------------------------------------------------------------------------------------- -->
-<!-- --------------------------------------------------------------------------------------------------------- -->
-<!-- For Assignment 4 code -->
+<!-- For Assignment 4 code 
 
 <h1 style="padding: 20px; margin: 20px; background-color: lavenderblush; color: darkblue;">
   Search Form
@@ -56,7 +88,7 @@
       </h1>
       <div class="content-card-body">
 
-        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>-->
+        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>
         <p>
           <img *ngIf="content.imgURL; else defaultURL" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 10%;" />
           <ng-template #defaultURL>
@@ -104,7 +136,7 @@
       </h1>
       <div class="content-card-body">
 
-        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>-->
+        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>
         <p>
           <img *ngIf="content.imgURL; else defaultURL" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 10%;" />
           <ng-template #defaultURL>
@@ -152,7 +184,7 @@
       </h1>
       <div class="content-card-body">
 
-        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>-->
+        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>
         <p>
           <img *ngIf="content.imgURL; else defaultURL" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 10%;" />
           <ng-template #defaultURL>
@@ -173,7 +205,7 @@
     </div>
 
   </li>
-</ul>
+</ul>-->
 
 
 

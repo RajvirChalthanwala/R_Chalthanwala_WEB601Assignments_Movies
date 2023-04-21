@@ -1,0 +1,24 @@
+<div [id]="movie.id" [ngClass]="['card', class]" appHoverAffect="border">
+
+  <div class="card-img">
+    <div *ngIf="movie.imgURL; else defaultImage">
+      <img [src]="movie.imgURL" alt={{movie.title}} (click)="handleClick(movie)">
+    </div>
+    <ng-template #defaultImage>
+      <img [src]="defaultMovie" alt={{movie.title}} (click)="handleClick(movie)">
+    </ng-template>
+  </div>
+
+  <div class="card-body">
+    <h2>{{movie.title}}</h2>
+    <p>{{movie.description}}</p>
+    <p><strong>Creator:</strong> {{movie.creator}}</p>
+    <p *ngIf="movie.type" appHoverAffect="underline"><strong>Type:</strong> {{movie.type}}</p>
+    <p *ngIf="movie.tags">
+      <strong>Tags:</strong>
+      <span *ngFor="let tag of movie.tags" appHoverAffect="bold">
+        {{tag}},
+      </span>
+    </p>
+  </div>
+</div>

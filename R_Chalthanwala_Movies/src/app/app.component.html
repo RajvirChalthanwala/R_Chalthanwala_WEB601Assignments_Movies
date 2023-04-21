@@ -1,1 +1,17 @@
+<section class="MovieById-sec">
+  <div class="idForm">
+    <form (submit)="findMovieById()">
+      <label for="movieId">Enter an ID:</label> <br>
+      <input type="number" min="0" id="movieId" name="movieId" [(ngModel)]="movieId" placeholder="Enter an id">
+      <button>Get Movie</button>
+    </form>
+  </div>
+  <div class="oneCard">
+    <app-content-card [movie]="oneMovieById" [class]="'oneMovie'"></app-content-card>
+  </div>
+</section>
+
+
+<app-message></app-message>
+
 <app-content-list></app-content-list>

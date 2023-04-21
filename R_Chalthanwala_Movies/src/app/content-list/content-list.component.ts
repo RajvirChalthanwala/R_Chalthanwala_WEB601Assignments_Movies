@@ -1,3 +1,56 @@
+import { Component, OnInit } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
+import { MovieService } from '../services/movie.service';
+
+@Component({
+  selector: 'app-content-list',
+  templateUrl: './content-list.component.html',
+  styleUrls: ['./content-list.component.scss']
+})
+export class ContentListComponent {
+  contents: Content[] = [];
+  searchTitle: string = "";
+  titleFound: boolean | null = null;
+  defaultMovie: string = '/assets/images/drawBike.jpg';
+
+
+  constructor(private MovieService: MovieService) {
+
+  }
+
+  ngOnInit() {
+    this.MovieService.getMovies().subscribe(movies => this.contents = movies);
+  }
+
+
+  searchByTitle() {
+    const matchingMovie = this.contents.find(movie => movie.title.toLowerCase() === this.searchTitle.toLowerCase());
+    const cardElements = document.querySelectorAll(`div.card`);
+
+    if (matchingMovie) {
+      this.titleFound = true;
+
+      cardElements.forEach(card => {
+        if (parseInt(card.id) === matchingMovie.id) {
+          card.classList.add('matched');
+        } else {
+          card.classList.remove('matched');
+        }
+      });
+    } else {
+      this.titleFound = false;
+      cardElements.forEach(card => card.classList.remove('matched'));
+    }
+  }
+
+}
+
+
+
+
+
+
+
 /*
 import { Component } from '@angular/core';
 @Component({
@@ -11,6 +64,7 @@ export class ContentListComponent {
 
 
 //import { Component } from '@angular/core';
+/*
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { ContentList } from '../helper-files/content-list';
@@ -116,14 +170,14 @@ export class ContentListComponent {
       this.searchExists = false;
       return;
     }
-    */
+    
     this.searchResults = this.contentArray.filter(item => item.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
     this.searchExists = this.searchResults.length > 0;
   }
 
 
 
-  /*
+  
   contentArray: Content[] = [
     {
       id: 1,
@@ -183,5 +237,6 @@ export class ContentListComponent {
   constructor() { }
   ngOnInit(): void {
   }
-  */
+  
 }
+*/
